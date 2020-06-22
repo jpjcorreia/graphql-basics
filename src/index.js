@@ -50,25 +50,25 @@ const comments = [
     id: "100",
     text: "Comment 1",
     author: "1",
-    post: "30"
+    post: "30",
   },
   {
     id: "200",
     text: "Comment 2",
     author: "1",
-    post: "10"
+    post: "10",
   },
   {
     id: "300",
     text: "Comment 3",
     author: "2",
-    post: "20"
+    post: "20",
   },
   {
     id: "400",
     text: "Comment 4",
     author: "2",
-    post: "10"
+    post: "10",
   },
 ];
 
@@ -81,6 +81,7 @@ const typeDefs = `
 
     type Mutation {
       createUser(name: String!, email: String!, age: Int): User!
+      createPost(title: String!, body: String! published: Boolean!, author: ID!): Post!
     }
 
     type User {
@@ -147,7 +148,7 @@ const resolvers = {
       const emailTaken = users.some((user) => {
         return user.email === args.email;
       });
-      
+
       if (emailTaken) {
         throw new Error("Email is already taken");
       }
@@ -156,13 +157,32 @@ const resolvers = {
         id: uuidv4(),
         name: args.name,
         email: args.email,
-        age: args.age
-      }
+        age: args.age,
+      };
 
       users.push(user);
 
       return user;
+    },
 
+    createPost(parent, args, ctx, info) {
+      const userExists = users.some((user) => user.id === args.author);
+
+      if (!userExists) {
+        throw new Error("User not found!");
+      }
+
+      const post = {
+        id: uuidv4(),
+        title: args.title,
+        body: args.body,
+        published: args.published,
+        author: args.author,
+      };
+
+      posts.push(post);
+
+      return post;
     }
   },
   Post: {
@@ -175,7 +195,7 @@ const resolvers = {
       return comments.filter((comment) => {
         return comment.post === parent.id;
       });
-    }
+    },
   },
   User: {
     posts(parent, args, ctx, info) {
@@ -186,21 +206,21 @@ const resolvers = {
     comments(parent, args, ctx, info) {
       return comments.filter((comment) => {
         return comment.author === parent.id;
-      })
-    }
+      });
+    },
   },
   Comment: {
     author(parent, args, ctx, info) {
       return users.find((user) => {
-        return (user.id === parent.author);
+        return user.id === parent.author;
       });
     },
     post(parent, args, ctx, info) {
       return posts.find((post) => {
-        return (post.id === parent.post);
+        return post.id === parent.post;
       });
-    }
-  }
+    },
+  },
 };
 
 const server = new GraphQLServer({
