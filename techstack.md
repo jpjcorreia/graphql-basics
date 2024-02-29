@@ -4,9 +4,9 @@
 jpjcorreia/graphql-basics is built on the following main stack:
 
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
+- [graphql-yoga](https://github.com/prisma/graphql-yoga) – GraphQL Tools
 - [Babel](http://babeljs.io/) – JavaScript Compilers
 - [nodemon](http://nodemon.io/) – node.js Application Monitoring
-- [graphql-yoga](https://github.com/prisma/graphql-yoga) – GraphQL Tools
 
 Full tech stack [here](/techstack.md)
 
@@ -17,9 +17,9 @@ Full tech stack [here](/techstack.md)
 jpjcorreia/graphql-basics is built on the following main stack:
 
 - <img width='25' height='25' src='https://img.stackshare.io/service/1209/javascript.jpeg' alt='JavaScript'/> [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
+- <img width='25' height='25' src='https://img.stackshare.io/service/9556/68747470733a2f2f696d6775722e636f6d2f5376366a3042362e706e67.png' alt='graphql-yoga'/> [graphql-yoga](https://github.com/prisma/graphql-yoga) – GraphQL Tools
 - <img width='25' height='25' src='https://img.stackshare.io/service/2739/-1wfGjNw.png' alt='Babel'/> [Babel](http://babeljs.io/) – JavaScript Compilers
 - <img width='25' height='25' src='https://img.stackshare.io/service/5577/preview.png' alt='nodemon'/> [nodemon](http://nodemon.io/) – node.js Application Monitoring
-- <img width='25' height='25' src='https://img.stackshare.io/service/9556/68747470733a2f2f696d6775722e636f6d2f5376366a3042362e706e67.png' alt='graphql-yoga'/> [graphql-yoga](https://github.com/prisma/graphql-yoga) – GraphQL Tools
 
 Full tech stack [here](/techstack.md)
 
@@ -30,7 +30,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [jpjcorreia/graphql-basics](https://github.com/jpjcorreia/graphql-basics)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|9<br/>Tools used|01/05/24 <br/>Report generated|
+|9<br/>Tools used|02/29/24 <br/>Report generated|
 |------|------|
 </div>
 
